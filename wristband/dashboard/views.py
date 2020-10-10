@@ -9,3 +9,6 @@ def dashboard(request):
 
 def maps_google(request):
     return render(request, 'dashboard/map-google.html')
+
+def page404(request):
+    return render(request, 'dashboard/404.html')

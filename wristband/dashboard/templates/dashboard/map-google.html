@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -102,7 +103,7 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                <img src="{% static 'dashboard/plugins/images/users/varun.jpg' %}" alt="user-img" width="36"
                                     class="img-circle"><span class="text-white font-medium">Steave</span></a>
                         </li>
                         <!-- ============================================================== -->
@@ -126,32 +127,51 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="fas fa-clock fa-fw"
+                                href="{% url 'dashboard-page' %}" aria-expanded="false"><i class="fas fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="profile.html" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="basic-table.html" aria-expanded="false"><i class="fa fa-table"
-                                    aria-hidden="true"></i><span class="hide-menu">Table</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="fontawesome.html" aria-expanded="false"><i class="fa fa-font"
-                                    aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="map-google.html" aria-expanded="false"><i class="fa fa-globe"
-                                    aria-hidden="true"></i><span class="hide-menu">Google Map</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="blank.html" aria-expanded="false"><i class="fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu">Blank</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url '404-page' %}"
+                                            aria-expanded="false">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span class="hide-menu">Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url '404-page' %}"
+                                            aria-expanded="false">
+                                            <i class="fa fa-table" aria-hidden="true"></i>
+                                            <span class="hide-menu">Workshop</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url '404-page' %}"
+                                            aria-expanded="false">
+                                            <i class="fa fa-font" aria-hidden="true"></i>
+                                            <span class="hide-menu">Forums</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'maps-page' %}"
+                                            aria-expanded="false">
+                                            <i class="fa fa-globe" aria-hidden="true"></i>
+                                            <span class="hide-menu">Google Map</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url '404-page' %}"
+                                            aria-expanded="false">
+                                            <i class="fa fa-columns" aria-hidden="true"></i>
+                                            <span class="hide-menu">Blank Page</span>
+                                        </a>
+                                    </li>
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="404.html" aria-expanded="false"><i class="fa fa-info-circle"
-                                    aria-hidden="true"></i><span class="hide-menu">404</span></a></li>
-                        <li class="text-center p-20 upgrade-btn">
+                                    aria-hidden="true"></i><span class="hide-menu">404</span></a></li> -->
+                        <!-- <li class="text-center p-20 upgrade-btn">
                             <a href="https://wrappixel.com/templates/ampleadmin/"
                                 class="btn btn-block btn-danger text-white" target="_blank">Upgrade to
                                 Pro</a>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </nav>
@@ -179,9 +199,9 @@
                             <ol class="breadcrumb ml-auto">
                                 <li><a href="#">Dashboard</a></li>
                             </ol>
-                            <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
+                            <!-- <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
                                 class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade
-                                to Pro</a>
+                                to Pro</a> -->
                         </div>
                     </div>
                 </div>
@@ -560,8 +580,8 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 © Ample Admin brought to you by <a
-                    href="https://www.wrappixel.com/">wrappixel.com</a>
+            <footer class="footer text-center"> 2020 © Safety Wristband <a
+                    href="https://www.wrappixel.com/"></a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -577,21 +597,21 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{% static 'dashboard/plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
+    <script src="{% static 'dashboard/plugins/bower_components/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'dashboard/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/app-style-switcher.js' %}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{% static 'dashboard/js/waves.js' %}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{% static 'dashboard/js/sidebarmenu.js' %}"></script>
     <!-- google maps api -->
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="plugins/bower_components/gmaps/gmaps.min.js"></script>
-    <script src="plugins/bower_components/gmaps/jquery.gmaps.js"></script>
+    <script src="{% static 'dashboard/plugins/bower_components/gmaps/gmaps.min.js' %}"></script>
+    <script src="{% static 'dashboard/plugins/bower_components/gmaps/jquery.gmaps.js' %}"></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.js"></script>
+    <script src="{% static 'dashboard/js/custom.js' %}"></script>
 </body>
 
 </html>

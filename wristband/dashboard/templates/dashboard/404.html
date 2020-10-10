@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -14,9 +15,9 @@
     <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'dashboard/plugins/images/favicon.png' %}">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
+   <link href="{% static 'dashboard/css/style.min.css' %}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -46,8 +47,8 @@
             <div class="error-body text-center">
                 <h1 class="error-title text-danger">404</h1>
                 <h3 class="text-uppercase error-subtitle">PAGE NOT FOUND !</h3>
-                <p class="text-muted m-t-30 m-b-30">YOU SEEM TO BE TRYING TO FIND HIS WAY HOME</p>
-                <a href="dashboard.html" class="btn btn-danger btn-rounded waves-effect waves-light m-b-40">Back to home</a>
+                <p class="text-muted m-t-30 m-b-30">YOU SEEM TO BE TRYING TO FIND YOUR WAY HOME</p>
+                <a href="{% url 'dashboard-page' %}" class="btn btn-danger btn-rounded waves-effect waves-light m-b-40">Back to home</a>
             </div>
         </div>
         <!-- ============================================================== -->
@@ -69,10 +70,10 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{% static 'dashboard/plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'dashboard/plugins/bower_components/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'dashboard/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
