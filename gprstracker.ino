@@ -7,6 +7,7 @@
  */
 
 #include <SoftwareSerial.h> //Software Serial header to communicate with GSM module 
+#include <stdlib.h>
 
 SoftwareSerial SIM800(10, 11); // RX, TX 
 
@@ -119,19 +120,21 @@ void loop() {
      SIM800.println("AT+CMGF=1"); //Set the module in SMS mode
      delay(1000);
      
-     i = 0;
-     char (*a[5])[10];
-     contact[0]="0123456789";
-     contact[1]="0123456789";
-     contact[2]="0123456789";
-     contact[3]="0123456789";
-     contact[4]="0123456789";
-     
-     while i < 5 {
-     SIM800.println("AT+CMGS=\"contact[i]\""); //Send SMS to this number 
+
+ int i = 0;
+ int j = 0;
+      int *list = malloc(4);
+      list[0] = 672803893;
+      list[1] = 614273890;
+      list[2] = 670067528;
+      list[3] = 712351065;
+       
+
+     for(i = 0; i < 4; i++) {
+     SIM800.println("AT+CMGS=\"0list[i]\""); //Send SMS to this number 
      delay(1000);
-     i++;
      }
+        free(list);
 
      SIM800.println(Link); // we have send the string in variable Link 
      delay(1000);
